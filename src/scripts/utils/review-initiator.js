@@ -30,7 +30,6 @@ const ReviewInitiator = {
       });
       if (response === 200) {
         Detail.afterRender();
-        console.log('succes');
       }
     }
   },
