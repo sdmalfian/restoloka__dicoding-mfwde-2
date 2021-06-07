@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /* global */
 
@@ -19,6 +20,10 @@
 a {
     text-decoration: none;
     color: unset;
+}
+
+main {
+    min-height: 100vh;
 }
 
 /* skip-content */
@@ -180,6 +185,58 @@ a {
     scale: 1.15;
 }
 
+.hero--favorite {
+    min-height: 300px;
+}
+
+/* loader */
+
+#loader-container {
+    display: flex;
+    justify-content: center;
+	align-items: center;
+    margin-top: 40px;
+}
+
+.lds-ring {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid var(--main-color);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--main-color) transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  
+
 /* main */
 
 .main__container {
@@ -188,7 +245,7 @@ a {
 
 #main__title {
     text-align: center;
-    margin: 20px 0 50px 0;
+    margin: 20px 0;
     font-size: 1.5rem;
 }
 
@@ -280,14 +337,38 @@ a {
     color: var(--orange);
 }
 
+/*
+   favorite
+*/
+.favorite {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #F1DABF;
+    color: #04030F;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#no-favorite {
+    color: red;
+}
 
 /* DETAIL PAGE */
 
 .restoDetail__name {
     text-align: center;
-    margin: 45px auto;
+    margin: 45px 10px;
     font-size: 2rem;
     text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .restoDetail__address {

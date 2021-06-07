@@ -1,24 +1,32 @@
 /* eslint-disable import/no-cycle */
-/* eslint-disable no-console */
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
 import ReviewInitiator from '../../utils/review-initiator';
-import { createRestaurantDetail } from '../templates/templates-creator';
+import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import { createRestaurantDetail, createLoader } from '../templates/templates-creator';
 
 const Detail = {
   async render() {
     return `
-      <section class="detail__container">
-        <!-- render -->
-      </section>
+    <section class="detail__container">
+        <div class="resto" id="root-content">
+          <div id="loader-container"></div>
+          <!-- render-->
+          </div>
+        </div>
+    </section>
+    <div id="favoriteButtonContainer"></div>
       `;
   },
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     const { id } = UrlParser.parseActiveUrlWithoutCombiner();
+    const restoWrapper = document.querySelector('#root-content');
+    const loaderContainer = document.querySelector('#loader-container');
+    loaderContainer.innerHTML = createLoader();
     const restaurant = await RestaurantSource.restoDetail(id);
-    const restoWrapper = document.querySelector('.detail__container');
+    loaderContainer.innerHTML = '';
     restoWrapper.innerHTML = '';
     restoWrapper.innerHTML += createRestaurantDetail(restaurant);
 
@@ -27,6 +35,18 @@ const Detail = {
       name: document.querySelector('#review__name'),
       review: document.querySelector('#review__text'),
       form: document.querySelector('#review__form'),
+    });
+
+    FavoriteButtonInitiator.init({
+      favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),
+      restaurant: {
+        id: restaurant.id,
+        pictureId: restaurant.pictureId,
+        name: restaurant.name,
+        description: restaurant.description,
+        rating: restaurant.rating,
+        city: restaurant.city,
+      },
     });
   },
 };

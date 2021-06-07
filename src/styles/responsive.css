@@ -60,6 +60,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .restoDetail__name {
+        margin: 45px auto;
+    }
+
 
     /*
     *

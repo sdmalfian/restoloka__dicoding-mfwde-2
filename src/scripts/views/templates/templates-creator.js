@@ -40,6 +40,10 @@ const makeList = (list) => {
   return items;
 };
 
+const createLoader = () => `
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+`;
+
 const createRestaurantDetail = (restaurant) => `
   <article class="restoDetail">
     <div class="restoDetail__header">
@@ -111,4 +115,22 @@ const createRestaurantDetail = (restaurant) => `
   </article>
 `;
 
-export { createRestaurantList, createRestaurantDetail };
+const createFavoriteButton = () => `
+  <button aria-label="favorite this movie" id="favoriteButton" class="favorite">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createUnfavoriteButton = () => `
+  <button aria-label="unfavorite this movie" id="favoriteButton" class="favorite">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createRestaurantList,
+  createLoader,
+  createRestaurantDetail,
+  createFavoriteButton,
+  createUnfavoriteButton,
+};
