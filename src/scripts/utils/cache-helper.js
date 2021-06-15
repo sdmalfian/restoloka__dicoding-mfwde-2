@@ -39,6 +39,9 @@ const CacheHelper = {
   },
 
   async _addCache(request) {
+    if (request.method === 'POST') {
+      return;
+    }
     const cache = await this._openCache();
     cache.add(request);
   },

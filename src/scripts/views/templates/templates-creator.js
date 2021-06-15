@@ -17,7 +17,7 @@ const createRestaurantList = (restaurant) => `
             <span>${restaurant.city}</span>
             </h2>
             <h2 class="resto__star">
-            <span><i class="fas fa-star"></i></span>
+            <span><i class="fa fa-star" aria-hidden="true"></i></span>
             <span>${restaurant.rating}</span>
             </h2>
         </div>
@@ -55,7 +55,7 @@ const createRestaurantDetail = (restaurant) => `
           <span>${restaurant.city}</span>
         </h3>
         <h3>
-          <span><i class="fas fa-star"></i></span>
+          <span><i class="fa fa-star" aria-hidden="true"></i></span>
           <span>${restaurant.rating}</span>
         </h3>
       </div>
@@ -102,7 +102,7 @@ const createRestaurantDetail = (restaurant) => `
       ${restaurant.customerReviews.map((review) => (`
         <li class="restoDetail__reviews__item">
           <div>
-            <i class="far fa-user-circle avatar"></i>
+            <i class="fa fa-user avatar" aria-hidden="true"></i>
           </div>
           <div>
             <h3> ${review.name}</h3>

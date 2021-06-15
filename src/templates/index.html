@@ -12,11 +12,10 @@
                which provide the best nearest restaurant
                around you.">
     <meta name="theme-color" content="#362417"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet preconnect" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="shortcut icon" href="src/public/icons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="src/public/icons/icon-192.png">
     <link rel="manifest" href="manifest.json">
-    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
   </head>
   <body>
     <a href="#maincontent" class="skip-link">Skip to Content</a>
@@ -25,9 +24,9 @@
         <a href="/" aria-label="Restoloka" class="header__brand">
           <h1 class="header__logo">Restoloka</h1>
         </a>
-        <a id="hamburger" aria-label="hamburger-button">☰</a>
+        <button id="hamburger" aria-label="hamburger-button" aria-expanded="false">☰</button>
         <nav id="drawer" class="nav">
-          <a id="drawer__close">></a>
+          <button id="drawer__close" aria-label="close menu">></button>
           <ul class="nav__list">
             <li class="nav__item"><a href="/">Home</a></li>
             <li class="nav__item"><a href="#/favorites">Favorites</a></li>

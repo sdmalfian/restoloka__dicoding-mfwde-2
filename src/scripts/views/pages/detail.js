@@ -9,11 +9,10 @@ const Detail = {
   async render() {
     return `
     <section class="detail__container">
-        <div class="resto" id="root-content">
-          <div id="loader-container"></div>
-          <!-- render-->
-          </div>
-        </div>
+      <div id="loader-container"></div>
+      <div class="resto" id="root-content">
+        <!-- render-->
+      </div>
     </section>
     <div id="favoriteButtonContainer"></div>
       `;

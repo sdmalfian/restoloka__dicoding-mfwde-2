@@ -60,12 +60,16 @@ main {
     align-self: center;
 }
 
+/*hamburger*/
+
 #hamburger {
     display: flex;
     align-self: center;
     font-size: 1.5rem;
     padding: 22px;
+    background-color: var(--main-color);
     color: var(--white);
+    border: none;
 }
 
 #drawer {
@@ -97,6 +101,7 @@ main {
     border: 1px solid var(--white);
     margin: 1rem;
     color: var(--white);
+    background-color: var(--rich-black);
 }
 
 .nav__list {
@@ -195,7 +200,7 @@ main {
     display: flex;
     justify-content: center;
 	align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .lds-ring {
