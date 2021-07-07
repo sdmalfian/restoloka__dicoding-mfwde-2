@@ -122,7 +122,7 @@ const createFavoriteButton = () => `
 `;
 
 const createUnfavoriteButton = () => `
-  <button aria-label="unfavorite this movie" id="favoriteButton" class="favorite">
+  <button aria-label="unfavorite this movie" id="unfavoriteButton" class="favorite">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
